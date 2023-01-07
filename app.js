@@ -34,14 +34,17 @@ app.get('/artist-search', (req, res, next) => {
   spotifyApi
     .searchArtists(artist)
     .then(data => {
-      // res.json(data.body.artists.items);
       const results = data.body.artists.items.map(result => {
         let {
           id,
           images,
           name
         } = result;
-        return {artist: name, img: images[0].url, id: id}
+        if (images[0] === undefined){
+          return {artist: name, img: 'https://www.ioshacker.com/wp-content/uploads/2018/11/Spotify-feat.jpg', id: id};
+        } else {
+          return {artist: name, img: images[0].url, id: id};
+        }
       });
       res.render('artist-search-results', {results});
     })
@@ -63,6 +66,22 @@ app.get('/albums/:artistId', (req, res, next) => {
         return {artist: artists[0].name, img: images[0].url, title: name, id: id};
       });
       res.render('album-list', {results, artist: results[0].artist});
+    })
+    .catch(err => console.log('The error while searching artists occurred: ', err));
+})
+
+app.get('/tracks/:albumId', (req, res, next) => {
+  const { albumId } = req.params;
+  spotifyApi
+    .getAlbumTracks(albumId)
+    .then(data => {
+      res.json(data.body.items);
+      const results = data.body.items.map(result => {
+        let {
+          name,
+
+        } = result;
+      })
     })
     .catch(err => console.log('The error while searching artists occurred: ', err));
 })
