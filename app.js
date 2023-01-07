@@ -70,18 +70,19 @@ app.get('/albums/:artistId', (req, res, next) => {
     .catch(err => console.log('The error while searching artists occurred: ', err));
 })
 
-app.get('/tracks/:albumId', (req, res, next) => {
-  const { albumId } = req.params;
+app.get('/tracks/:albumId/:albumTitle', (req, res, next) => {
+  const { albumId, albumTitle } = req.params;
   spotifyApi
     .getAlbumTracks(albumId)
     .then(data => {
-      res.json(data.body.items);
-      const results = data.body.items.map(result => {
+      const results = data.body.items.map(result => { 
         let {
           name,
-
+          preview_url
         } = result;
-      })
+        return {name, preview_url};
+      });
+      res.render('track-list', {results, albumTitle});
     })
     .catch(err => console.log('The error while searching artists occurred: ', err));
 })
