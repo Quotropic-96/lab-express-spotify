@@ -1,7 +1,10 @@
-{{#each results}}
-    <div class="artist-card">
-        <img src="{{this.img}}" alt="Artist image">
-        <h2>{{this.artist}}</h2>
-        <a href="/albums/{{this.id}}">View Albums</a>
-    </div>
-{{/each}}
+<h1 class="page-title">Results by {{this.query}}</h1>
+<div id="artist-search-results">
+    {{#each results}}
+        <div class="artist-card">
+            <img src="{{this.img}}" alt="Artist image">
+            <h2>{{this.artist}}</h2>
+            <a href="/albums/{{this.id}}">View Albums</a>
+        </div>
+    {{/each}}
+</div>

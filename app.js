@@ -46,7 +46,7 @@ app.get('/artist-search', (req, res, next) => {
           return {artist: name, img: images[0].url, id: id};
         }
       });
-      res.render('artist-search-results', {results});
+      res.render('artist-search-results', {results, query: artist});
     })
     .catch(err => console.log('The error while searching artists occurred: ', err));
 });
