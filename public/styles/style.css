@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* Layout */
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+.main-nav {
+    background-color: #28231D;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+.main-nav a {
+    color: #fffafa;
+    text-decoration: none;
+}
+.page {
+    height: 93%;
+}
+/* Home Page */
+#home-page {
+    background-image: url('/images/spotify-background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#home-page form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 10%;
+    padding: 10% 5%;
+    background-color: rgba(40, 35, 29, .5);
+    gap: 20%;
+}
+#home-page .text-input {
+    height: 50%;
+    font: inherit;
+}
+#home-page .submit-btn {
+    height: 40%;
+    width: 60%;
+    align-self: center;
+    background-color: #9A4D38;
+    border: none;
+    border-radius: 5px;
+    color: #fffafa;
+    font: inherit;
+    padding: 10px;
+}
+
+/* Media Querys */
+@media (max-width: 600px) {
+    #home-page .submit-btn {
+        height: 60%;
+        display: flex;
+        align-items: center;
+    }
+}
