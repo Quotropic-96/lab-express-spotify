@@ -6,7 +6,7 @@ body {
 }
 .main-nav {
     background-color: #28231D;
-    height: 7%;
+    height: 4%;
     display: flex;
     align-items: center;
     padding-left: 20px;
@@ -15,8 +15,18 @@ body {
     color: #fffafa;
     text-decoration: none;
 }
+.wave-separator {
+    background-image: url('/images/nav_waves.svg');
+    aspect-ratio: 960/100;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 3%;
+}
 .page {
-    height: 93%;
+    height: 96%;
 }
 /* Home Page */
 #home-page {
@@ -58,6 +68,7 @@ body {
 .page-title {
     font-size: 2.5rem;
     margin: 20px;
+    margin-top: 8%;
 }
 .card-grid {
     display: flex;
