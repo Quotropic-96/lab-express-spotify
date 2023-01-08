@@ -54,17 +54,17 @@ body {
     padding: 10px;
 }
 
-/* Artis Search Results Page */
+/* Artis Search Results Page & Album List Page */
 .page-title {
     font-size: 2.5rem;
     margin: 20px;
 }
-#artist-search-results {
+.card-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-#artist-search-results .artist-card {
+.card-grid .card {
     width: 250px;
     height: 250px;
     background-color: #28231D;
@@ -76,15 +76,15 @@ body {
     border: 2px solid #28231D;
     border-radius: 5px;
 }
-#artist-search-results .artist-card img {
+.card-grid .card img {
     height: 70%;
     width: 70%;
 }
-#artist-search-results .artist-card h2 {
+.card-grid .card h2 {
     color: #fffafa;
     text-align: center;
 }
-#artist-search-results .artist-card a {
+.card-grid .card a {
     background-color: #9A4D38;
     text-decoration: none;
     color: #fffafa;

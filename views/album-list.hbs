@@ -1,8 +1,10 @@
-<h1>Albums for {{this.artist}}</h1>
-{{#each results}}
-<div class="album-card">
-    <img src="{{this.img}}" alt="Album cover image">
-    <h2>{{this.title}}</h2>
-    <a href="/tracks/{{this.id}}/{{this.title}}">View tracks</a>
+<h1 class="page-title">Albums for {{this.artist}}</h1>
+<div class="card-grid">
+    {{#each results}}
+        <div class="card">
+            <img src="{{this.img}}" alt="Album cover image">
+            <h2>{{this.title}}</h2>
+            <a href="/tracks/{{this.id}}/{{this.title}}">View tracks</a>
+        </div>
+    {{/each}}
 </div>
-{{/each}}
