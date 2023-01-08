@@ -131,6 +131,9 @@ body {
     #home-page form {
         padding: 10% 5%;
     }
+    #home-page .text-input {
+        height: 60px
+    }
     #home-page .submit-btn {
         height: 60%;
         display: flex;
